@@ -1556,7 +1556,6 @@ footer{padding:2.6rem 0 5rem;text-align:center}
     document.body.style.overflow = 'hidden';
     formView.style.display = 'block';
     successView.style.display = 'none';
-    if(typeof fbq !== 'undefined'){ fbq('track', 'Lead'); }
     var firstInput = document.getElementById('f-nome');
     if(firstInput) setTimeout(function(){ firstInput.focus(); }, 200);
   }
@@ -1569,6 +1568,9 @@ footer{padding:2.6rem 0 5rem;text-align:center}
     btn.addEventListener('click', openModal);
   });
   closeBtn.addEventListener('click', closeModal);
+  waLink.addEventListener('click', function(){
+    if(typeof fbq !== 'undefined'){ fbq('track', 'Lead'); }
+  });
   overlay.addEventListener('click', function(e){
     if(e.target === overlay) closeModal();
   });
